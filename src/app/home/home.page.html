@@ -1,20 +1,68 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Expense Tracker </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-card>
+    <form [formGroup]="form">
+      <ion-card-content>
+        <ion-item>
+          <ion-input
+            label="Expense Reason"
+            labelPlacement="floating"
+            formControlName="reason"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Expense Amount"
+            labelPlacement="floating"
+            formControlName="amount"
+            type="number"
+          ></ion-input>
+        </ion-item>
+        <div class="ion-text-right ion-margin-top">
+          <ion-button
+            class="ion-margin-end"
+            color="secondary"
+            (click)="addExpense()"
+          >
+            <ion-icon slot="start" name="add"></ion-icon>Add
+          </ion-button>
+          <ion-button color="danger" (click)="cancel()">
+            <ion-icon slot="start" name="close"></ion-icon>Cancel</ion-button
+          >
+        </div>
+      </ion-card-content>
+    </form>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-input
+          label="Total Expenses"
+          [value]="totalAmountSig()"
+          [readonly]="true"
+          class="ion-text-right"
+        ></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        @for (expense of expensesSig(); track $index) {
+        <ion-item>{{expense.reason}}</ion-item>
+        <ion-label>
+          <h2>{{expense.reason}}</h2>
+          <p>{{expense.amount}}</p>
+        </ion-label>
+        } @empty {
+        <p class="ion-text-center">You have no expenses</p>
+        }
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
