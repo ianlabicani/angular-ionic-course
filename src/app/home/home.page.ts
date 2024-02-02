@@ -26,13 +26,7 @@ interface IExpense {
 export class HomePage {
   expensesSig = signal<IExpense[]>([]);
   totalAmountSig = computed(() =>
-    this.expensesSig().reduce((prev, cur) => {
-      console.log(cur.amount + prev);
-      console.log(typeof prev);
-      console.log(typeof cur.amount);
-
-      return cur.amount + prev;
-    }, 0)
+    this.expensesSig().reduce((prev, cur) => cur.amount + prev, 0)
   );
 
   fb = inject(FormBuilder);
