@@ -24,6 +24,9 @@ import {
   IonIcon,
   IonList,
   IonLabel,
+  IonGrid,
+  IonRow,
+  IonCol,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { add, close } from 'ionicons/icons';
@@ -39,6 +42,9 @@ interface IExpense {
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    IonCol,
+    IonRow,
+    IonGrid,
     IonLabel,
     IonText,
     IonHeader,
