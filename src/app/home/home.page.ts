@@ -7,29 +7,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonButton,
-  IonCard,
-  IonCardHeader,
-  IonCardContent,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonItem,
-  IonInput,
-  IonText,
-  IonIcon,
-  IonList,
-  IonLabel,
-  IonGrid,
-  IonRow,
-  IonCol,
-} from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { add, close } from 'ionicons/icons';
+import { sharedIonComponents } from '../shared';
 
 interface IExpense {
   reason: string;
@@ -41,29 +21,7 @@ interface IExpense {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [
-    IonCol,
-    IonRow,
-    IonGrid,
-    IonLabel,
-    IonText,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonButton,
-    IonCard,
-    IonCardHeader,
-    IonCardContent,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonItem,
-    IonInput,
-    IonIcon,
-    IonList,
-    ReactiveFormsModule,
-    CommonModule,
-  ],
+  imports: [...sharedIonComponents, ReactiveFormsModule, CommonModule],
 })
 export class HomePage {
   expensesSig = signal<IExpense[]>([]);
