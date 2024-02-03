@@ -81,3 +81,11 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-alert
+  [isOpen]="isAlertOpen"
+  header="Invalid Input."
+  message="All fields are required."
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)"
+></ion-alert>
