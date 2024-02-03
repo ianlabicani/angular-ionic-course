@@ -102,7 +102,7 @@
       },
       {
         "file": "src/app/app.component.html",
-        "hash": "12139992690072916112"
+        "hash": "15237903843594398433"
       },
       {
         "file": "src/app/app.component.scss",
@@ -114,7 +114,7 @@
       },
       {
         "file": "src/app/app.component.ts",
-        "hash": "14255712435515673760"
+        "hash": "5139802671249644662"
       },
       {
         "file": "src/app/app.routes.ts",
@@ -122,11 +122,11 @@
       },
       {
         "file": "src/app/home/home.page.html",
-        "hash": "3668328913015384273"
+        "hash": "6405404870488330054"
       },
       {
         "file": "src/app/home/home.page.scss",
-        "hash": "14250411118003398491"
+        "hash": "3244421341483603138"
       },
       {
         "file": "src/app/home/home.page.spec.ts",
@@ -134,7 +134,11 @@
       },
       {
         "file": "src/app/home/home.page.ts",
-        "hash": "8695204198416056090"
+        "hash": "3104768560363431850"
+      },
+      {
+        "file": "src/app/shared/index.ts",
+        "hash": "17876587817945366371"
       },
       {
         "file": "src/assets/icon/favicon.png",
@@ -162,7 +166,7 @@
       },
       {
         "file": "src/main.ts",
-        "hash": "282009733975285211"
+        "hash": "1276922839870312609"
       },
       {
         "file": "src/polyfills.ts",
@@ -174,7 +178,7 @@
       },
       {
         "file": "src/theme/variables.scss",
-        "hash": "10683809365950317113"
+        "hash": "5039174793813144940"
       },
       {
         "file": "src/zone-flags.ts",
