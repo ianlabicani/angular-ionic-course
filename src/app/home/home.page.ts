@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import {
@@ -9,7 +10,6 @@ import {
 } from '@angular/forms';
 import { addIcons } from 'ionicons';
 import { add, close } from 'ionicons/icons';
-import { sharedIonComponents } from '../shared';
 
 interface IExpense {
   reason: string;
@@ -21,7 +21,7 @@ interface IExpense {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [...sharedIonComponents, ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, IonicModule],
 })
 export class HomePage {
   expensesSig = signal<IExpense[]>([]);
@@ -30,8 +30,16 @@ export class HomePage {
   );
 
   fb = inject(FormBuilder);
-
   form: FormGroup;
+
+  alertButtons = [
+    {
+      text: 'Okay',
+      role: 'okay',
+      handler: () => {},
+    },
+  ];
+  isAlertOpen: boolean = false;
 
   constructor() {
     addIcons({ add, close });
@@ -44,6 +52,7 @@ export class HomePage {
   addExpense() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
+      this.setOpen(true);
       return;
     }
     const newExpense: IExpense = this.form.value;
@@ -53,5 +62,9 @@ export class HomePage {
 
   cancel() {
     this.form.reset();
+  }
+
+  setOpen(arg0: boolean) {
+    this.isAlertOpen = arg0;
   }
 }
