@@ -1,3 +1,27 @@
 {
-  "typescript.preferences.autoImportFileExcludePatterns": ["@ionic/angular/common", "@ionic/angular"]
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "@ionic/angular/common",
+    "@ionic/angular"
+  ],
+  "conventionalCommits.scopes": [
+    "utilities",
+    "component",
+    "env",
+    "services",
+    "config",
+    "routes",
+    "module",
+    "scss",
+    "assets",
+    "dependencies",
+    "state",
+    "guard",
+    "interface",
+    "directive",
+    "effects",
+    "styles",
+    "constants",
+    "actions",
+    "page"
+  ]
 }
